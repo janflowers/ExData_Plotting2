@@ -12,11 +12,12 @@ plot3 <- function(){
   
   # create line graph to see over time across types
   png("plot3.png", height=480, width=480, units = "px")
-  ggplot(baltimoreByType, aes(x=factor(year), y=x, group=type, colour=type)) +
+  theplot <- ggplot(baltimoreByType, aes(x=factor(year), y=x, group=type, colour=type)) +
     geom_line(size=1.25) +
     geom_point(size=4, shape=19) +
     xlab("Year") + ylab("in Tons") + ggtitle("PM2.5 Emissions for Baltimore City, 1999-2008 By Source Type") +
     scale_colour_hue(name="Type", l=30)
+  print(theplot)
   
   # close charting device
   dev.off()

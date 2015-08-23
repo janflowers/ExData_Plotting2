@@ -20,7 +20,7 @@ plot4 <- function(){
   sumOfCombCoal <<- aggregate(Emissions ~ year, combcoalNEI, sum)
   
   #create bar graph
-  png("plot4.png", height=480, width=480, units = "px")
+  png("plot4.png", height=480, width=600, units = "px")
   barplot(sumOfCombCoal$Emissions/10^3, 
           names.arg = sumOfCombCoal$year, 
           main="PM2.5 Coal Combustion-Related Emissions for United States, 1999-2008", 

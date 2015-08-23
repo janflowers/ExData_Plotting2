@@ -27,12 +27,13 @@ plot6 <- function(){
   bothVehicleNEI <- rbind(baltimoreVehicle, laVehicle)
   
   #create bar graph
-  png("plot6.png", height=480, width=480, units = "px")
-  ggplot(bothVehicleNEI, aes(x=factor(year), y=Emissions, group=location, colour=location)) +
+  png("plot6.png", height=480, width=600, units = "px")
+  theplot <- ggplot(bothVehicleNEI, aes(x=factor(year), y=Emissions, group=location, colour=location)) +
     geom_line(size=1.25) +
     geom_point(size=4, shape=19) +
     xlab("Year") + ylab("in Tons") + ggtitle("PM2.5 Vehicle Emissions for Baltimore and LA, 1999-2008") +
     scale_colour_hue(name="City", l=30)
+  print(theplot)
   
   #close charting device
   dev.off()
